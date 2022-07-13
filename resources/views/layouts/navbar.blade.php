@@ -46,8 +46,8 @@
             @else
             <ul class="navbar-nav pe-2 ps-auto mb-xl-0">
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <p class="right-link">{{ Auth::user()->name }}</p>
+                    <a id="navbarDropdown" class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <p class="right-link dropdown-toggle">{{ Auth::user()->name }} </p>
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
