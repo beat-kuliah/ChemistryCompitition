@@ -1,13 +1,13 @@
-<nav class="navbar navbar-expand-xl navbar-light" style="background-color: #6c6b86;">
+<nav class="navbar navbar-expand-xl navbar-light py-0 fs-5 fixed-top" style="background-color: #000000b2;" id="navbar">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <img src="{{ URL::to('images/Landing Page/logo cf ver 1-02.png') }}" alt="" width="60" height="60">
         </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBasic" aria-controls="navBasic" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample06">
+      <div class="collapse navbar-collapse justify-content-md-center" id="navBasic">
         <ul class="navbar-nav ms-auto me-auto pe-4 mb-6 mb-xl-0">
             <li class="nav-item">
                 <a class="nav-link" href=""><p class="mid-link">CC</p></a>
@@ -33,13 +33,13 @@
             <ul class="navbar-nav ps-auto mb-xl-0">
                 @if (Route::has('login'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}"><p class="right-link">{{ __('Login') }}</p></a>
+                        <a class="nav-link" href="{{ route('login') }}"><button class="btn btn-info "><p class="right-link"> Daftar </p></button></a>
                     </li>
                 @endif
 
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}"><p class="right-link">{{ __('Register') }}</p></a>
+                        <a class="nav-link" href="{{ route('register') }}"><button class="btn btn-outline-info"><p class="right-link"> Masuk </p></button></a>
                     </li>
                 @endif
                 </ul>
@@ -67,7 +67,6 @@
       </div>
     </div>
   </nav>
-
 
 {{-- <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #6c6b86;">
     <div class="container">
