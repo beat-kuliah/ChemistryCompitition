@@ -2,18 +2,20 @@
     font-size: 20px;
 }
 
-.navbar-light .navbar-nav .mid-link {
+.navbar-light .navbar-nav .nav-link .mid-link {
+    margin: auto;
     color: black;
 }
 
-.navbar-light .navbar-nav .mid-link:hover {
+.navbar-light .navbar-nav .nav-link  .mid-link:hover {
     color: white;
 }
 
-.navbar-light .navbar-nav .right-link {
+.navbar-light .navbar-nav .nav-link  .right-link {
+    margin: auto;
     color: white;
 }
 
-.navbar-light .navbar-nav .right-link:hover {
+.navbar-light .navbar-nav .nav-link  .right-link:hover {
     color: black;
 }

@@ -10,22 +10,22 @@
       <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample06">
         <ul class="navbar-nav ms-auto me-auto pe-4 mb-6 mb-xl-0">
             <li class="nav-item">
-                <a class="nav-link mid-link" href="">CC</a>
+                <a class="nav-link" href=""><p class="mid-link">CC</p></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link mid-link" href="">COD</a>
+                <a class="nav-link" href=""><p class="mid-link">COD</p></a>
             </li>
             <li class="nav-item">
-                <a class="mid-link nav-link" href="">CIP</a>
+                <a class="nav-link" href=""><p class="mid-link">CIP</p></a>
             </li>
             <li class="nav-item">
-                <a class="mid-link nav-link" href="">Semnas</a>
+                <a class="nav-link" href=""><p class="mid-link">Semnas</p></a>
             </li>
             <li class="nav-item">
-                <a class="mid-link nav-link" href="">Chempaign</a>
+                <a class="nav-link" href=""><p class="mid-link">Chempaign</p></a>
             </li>
             <li class="nav-item">
-                <a class="mid-link nav-link" href="">News</a>
+                <a class="nav-link" href=""><p class="mid-link">News</p></a>
             </li>
         </ul>
         
@@ -33,21 +33,21 @@
             <ul class="navbar-nav ps-auto mb-xl-0">
                 @if (Route::has('login'))
                     <li class="nav-item">
-                        <a class="nav-link right-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}"><p class="right-link">{{ __('Login') }}</p></a>
                     </li>
                 @endif
 
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link right-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link" href="{{ route('register') }}"><p class="right-link">{{ __('Register') }}</p></a>
                     </li>
                 @endif
                 </ul>
             @else
             <ul class="navbar-nav pe-2 ps-auto mb-xl-0">
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle right-link" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }}
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <p class="right-link">{{ Auth::user()->name }}</p>
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
