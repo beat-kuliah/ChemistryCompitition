@@ -25,7 +25,7 @@
                 <a class="nav-link" href=""><p class="mid-link">Chempaign</p></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href=""><p class="mid-link">News</p></a>
+                <a class="nav-link" href="\news"><p class="mid-link">News</p></a>
             </li>
         </ul>
         

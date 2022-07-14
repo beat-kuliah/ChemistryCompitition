@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('landing_page.index');
 });
 
+Route::get('/news', function () {
+    return view('news.index');
+});
+
 Auth::routes();
 
 Route::middleware(['auth', 'isAdmin'])->group(function() {
