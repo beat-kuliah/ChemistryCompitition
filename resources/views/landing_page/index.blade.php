@@ -1,8 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid pt-2">
-    <div class="row m-5 p-5">
+<div class="container pt-2">
+    <div class="row mt-5">
+        {{-- <div class="col-ms-12"> --}}
+            <div class="col-ms-2">
+                
+            </div>
+            <center><div class="col-md-10 border border-3 border-dark bg-light" id="response">
+                <div class="mid-header">
+                    <h1 class="fw-bold"> Chemistry Fair UI 2022 </h1>
+                    <h4> Kompetisi Nasional Departemen Kimia Universitas Indonesia </h5>
+                    <p> Chemistry Fair UI kembali hadir di tahun 2022 dengan tema "Preparing The Future's Health and Lifestyle for Endemic Era to Achieve The Better Well Being of Society" </p>
+                </div>
+            </div></center>
+            <div class="col-ms-2">
+                
+            </div>
+        {{-- </div> --}}
+    </div>
+    <div class="container" id="header-body">
+        <div class="float-start" id="img-bottle">
+            <img src="images/Landing Page/alpukat-botol-minum.png" class="rounded img-fluid" alt="...">
+        </div>
+        <div class="float-end" id="img-maskot">
+            <img src="images/Landing Page/maskot.png" class="rounded img-fluid" alt="...">
+        </div>
+    </div>
+    {{-- <div class="row m-5 p-5">
         <div class="col m-lr p-5 border border-3 border-dark bg-light">
             <div class="pe-4 me-3">
                 <div class="h0 fw-bold"> Chemistry Fair UI 2022 </div>
@@ -12,7 +37,7 @@
         </div>
         <img src="images/Landing Page/alpukat-botol-minum.png" id="alpukat" />
         <img src="images/Landing Page/maskot.png" id="maskot" />
-    </div>
+    </div> --}}
     <div class="my-5 py-5"></div>
     <div class="row px-10">
         <div class="col-md-8 pt-3">
