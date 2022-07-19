@@ -18,21 +18,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link href="{{ asset('dashboard.css') }}" rel="stylesheet">
-    <script src="dashboard.js"></script>
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/offcanvas.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
 
 <body>
-    @include('admin.header')
-
-    <div class="container-fluid">
-        <div class="row">
-            @include('admin.navbar')
-
-            @yield('content')
-        </div>
+    {{-- @include('admin.layouts.header') --}}
+    @include('layouts.navbar')
+    <div class="container">
+        @include('admin.layouts.navbar')
     </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
 
 
 </body>

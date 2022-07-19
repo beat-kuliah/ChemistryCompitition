@@ -27,20 +27,10 @@
             <img src="images/Landing Page/maskot.png" class="rounded img-fluid" alt="...">
         </div>
     </div>
-    {{-- <div class="row m-5 p-5">
-        <div class="col m-lr p-5 border border-3 border-dark bg-light">
-            <div class="pe-4 me-3">
-                <div class="h0 fw-bold"> Chemistry Fair UI 2022 </div>
-                <h4> Kompetisi Nasional Departemen Kimia Universitas Indonesia </h5>
-                <p> Chemistry Fair UI kembali hadir di tahun 2022 dengan tema "Preparing The Future's Health and Lifestyle for Endemic Era to Achieve The Better Well Being of Society" </p>
-            </div>
-        </div>
-        <img src="images/Landing Page/alpukat-botol-minum.png" id="alpukat" />
-        <img src="images/Landing Page/maskot.png" id="maskot" />
-    </div> --}}
     <div class="my-5 py-5"></div>
+    <br><br>
     <div class="row px-10">
-        <div class="col-md-8 pt-3">
+        <div class="col-md-8">
             <div class="px-10 py-5 border border-3 border-dark bg-light">
                 <p> Selama 11 tahun, Chemistry Fair UI telah hadir untuk memberikan kontribusi terbaik bagi masyarakat dan pendidikan. Tahun ini, kami mengajak kalian berinovasi untuk gaya hidup sehat melalui rangkaian olimpiade ajang seni, dan acara lainnya. </p>
                 <p> Pada tahun 2022, Chemistry Fair UI mengundang pada pejuang hidup sehat dari segala usia dan latar belakang untuk bersama menyebarkan misi baik atas nama kesehatan. Melalui 5 mata acara unggulan Chemistry Fair UI: Chemistry Competition, Chemistry Innovation Project, Chempaign, Seminar Nasional, dan Chemistry Open Debate, kami percaya bahwa setiap jiwa memiliki keinginan untuk berkontribusi dalam menyiapkan masa depan yang lebih baik. <p>

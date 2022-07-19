@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,12 +14,15 @@ Route::get('/', function () {
     return view('landing_page.index');
 });
 
-Route::get('/news', function () {
-    return view('news.index');
-});
-
 Auth::routes();
 
 Route::middleware(['auth', 'isAdmin'])->group(function() {
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
 });
+
+Route::get('/cc', [App\Http\Controllers\CCController::class, 'index']);
+Route::get('/cod', [App\Http\Controllers\CODController::class, 'index']);
+Route::get('/cip', [App\Http\Controllers\CIPontroller::class, 'index']);
+Route::get('/semnas', [App\Http\Controllers\Semnasontroller::class, 'index']);
+Route::get('/chempaign', [App\Http\Controllers\ChempaignController::class, 'index']);
+Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);

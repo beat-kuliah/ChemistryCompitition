@@ -82,6 +82,10 @@
     margin-left: -60px;
 }
 
+#auth {
+    margin-top: 70px;
+}
+
 @media (max-width: 1200px) {
     #img-bottle {
         margin-left: -40px;
