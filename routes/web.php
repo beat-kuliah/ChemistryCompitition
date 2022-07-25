@@ -23,6 +23,6 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
 Route::get('/cc', [App\Http\Controllers\CCController::class, 'index']);
 Route::get('/cod', [App\Http\Controllers\CODController::class, 'index']);
 Route::get('/cip', [App\Http\Controllers\CIPController::class, 'index']);
-Route::get('/semnas', [App\Http\Controllers\SemnasController::class, 'index']);
+Route::get('/semnas', [App\Http\Controllers\SemNasController::class, 'index']);
 Route::get('/chempaign', [App\Http\Controllers\ChempaignController::class, 'index']);
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
