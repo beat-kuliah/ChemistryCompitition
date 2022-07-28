@@ -11,11 +11,12 @@ class DownloadController extends Controller
 
     public function index($id)
     {
-        $fileName = 'public\\buku_panduan\\' . $id . '.pdf';
+        $fileName = 'app\\public\\buku_panduan\\' . $id . '.pdf';
         $headers = ['Content-Type: application/pdf'];
-        $path = public_path($fileName);
+        $path = storage_path($fileName);
 
-        $result = Response()->download($fileName);
+        // dd($path);
+        $result = Response()->download($path);
 
         return $result;
     }
