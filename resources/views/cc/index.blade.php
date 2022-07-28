@@ -145,7 +145,7 @@
         </div>
         <br><br>
         <center>
-            <button type="button" class="btn btn-outline-dark" id="button" onclick="download('dd')">Unduh Buku Panduan</button>
+            <button type="button" class="btn btn-outline-dark" id="button" onclick="download('cc')">Unduh Buku Panduan</button>
         </center>
     </div>
 
