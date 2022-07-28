@@ -12,6 +12,9 @@
     <!-- Scripts -->
     {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
+    <!-- Icon Title -->
+    <link rel="icon" href="{{ URL::to('images/Landing Page/logo cf ver 1-02.png') }}">
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
