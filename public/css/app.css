@@ -25,10 +25,6 @@
     color: black;
 }
 
-#navbar {
-    transition: top 0.3s;
-}
-
 .bg-landing {
     background: url('images/Landing\ Page/background.png') no-repeat center center;
     width: 100%;
@@ -48,6 +44,15 @@
     font-size: 5vw;
     line-height: 0.9;
     margin-bottom: 2%;
+}
+
+#font {
+    color: white;
+    text-align: center;
+}
+
+#navbar {
+    transition: top 0.3s;
 }
 
 #alpukat {
@@ -109,8 +114,9 @@
 }
 
 #img-supri {
-    width: 130px;
+    width: 200px;
     float: right;
+    margin-right: -50px;
 }
 
 #mv-btn {

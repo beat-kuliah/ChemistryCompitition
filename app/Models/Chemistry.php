@@ -23,4 +23,9 @@ class Chemistry extends Model
     {
         return $this->hasMany(Competition::class);
     }
+
+    public function lini_masa()
+    {
+        return $this->hasMany(LiniMasa::class);
+    }
 }

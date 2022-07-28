@@ -15,19 +15,11 @@ return new class extends Migration
     {
         Schema::create('lini_masa', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->date('gel_1_1')->nullable();
-            $table->date('gel_1_2')->nullable();
-            $table->date('gel_2_1')->nullable();
-            $table->date('gel_2_2')->nullable();
-            $table->date('tm_1')->nullable();
-            $table->date('pre')->nullable();
-            $table->date('p_1')->nullable();
-            $table->date('tm_2')->nullable();
-            $table->date('qf')->nullable();
-            $table->date('p_2')->nullable();
-            $table->date('sgf')->nullable();
-            $table->date('p_3')->nullable();
+            $table->integer('chemistry_id');
+            $table->date('date_1')->nullable();
+            $table->date('date_2')->nullable();
+            $table->date('date_3')->nullable();
+            $table->date('date_4')->nullable();
             $table->timestamps();
         });
     }
