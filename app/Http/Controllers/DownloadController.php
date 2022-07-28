@@ -11,7 +11,7 @@ class DownloadController extends Controller
 
     public function index($id)
     {
-        $fileName = 'app\\public\\buku_panduan\\' . $id . '.pdf';
+        $fileName = 'buku_panduan/' . $id . '.pdf';
         $headers = ['Content-Type: application/pdf'];
         $path = storage_path($fileName);
 
