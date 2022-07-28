@@ -27,7 +27,8 @@ class DatabaseSeeder extends Seeder
             CompetitionSeeder::class,
             RegionalSeeder::class,
             PersonTypeSeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            LiniMasaSeeder::class,
         ]);
     }
 }

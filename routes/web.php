@@ -26,3 +26,6 @@ Route::get('/cip', [App\Http\Controllers\CIPController::class, 'index']);
 Route::get('/semnas', [App\Http\Controllers\SemNasController::class, 'index']);
 Route::get('/chempaign', [App\Http\Controllers\ChempaignController::class, 'index']);
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
+
+
+Route::get('/file/download/panduan/{id}', [App\Http\Controllers\DownloadController::class, 'index'])->name('download');
