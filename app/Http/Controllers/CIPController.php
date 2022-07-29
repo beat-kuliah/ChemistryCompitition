@@ -36,4 +36,9 @@ class CIPController extends Controller
 
         return view('cip.index', $data);
     }
+
+    public function create()
+    {
+        return view('cip.create');
+    }
 }

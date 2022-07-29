@@ -36,4 +36,9 @@ class CODController extends Controller
 
         return view('cod.index', $data);
     }
+
+    public function create()
+    {
+        return view('cod.create');
+    }
 }

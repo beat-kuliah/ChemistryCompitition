@@ -39,4 +39,9 @@ class CCController extends Controller
 
         return view('cc.index', $data);
     }
+
+    public function create()
+    {
+        return view('cc.create');
+    }
 }

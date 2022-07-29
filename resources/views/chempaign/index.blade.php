@@ -31,7 +31,7 @@
                     <div class="mid-header" id="mv-btn">
                         <h3>Ajang kesenian untuk kamu yang ingin berkontribusi melalui seni</h3>
                         <br>
-                        <a class="btn btn-outline-dark" id="button" href="">Daftar</a>
+                        <a class="btn btn-outline-dark" id="button" href="/daftar/chempaign">Daftar</a>
                         <a class="btn btn-outline-dark" id="button" href="#chempaign">Tentang Chempaign</a>
                     </div>
                 </div>

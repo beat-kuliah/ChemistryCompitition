@@ -29,7 +29,7 @@
             <center>
                 <div class="col-md-10" id="response">
                     <div class="mid-header" id="mv-btn">
-                        <a class="btn btn-outline-dark" id="button" href="">Daftar</a>
+                        <a class="btn btn-outline-dark" id="button" href="/daftar/cc">Daftar</a>
                         <a class="btn btn-outline-dark" id="button" href="#cc">Tentang CC</a>
                     </div>
                 </div>

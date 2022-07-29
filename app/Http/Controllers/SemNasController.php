@@ -38,4 +38,9 @@ class SemNasController extends Controller
 
         return view('semnas.index', $data);
     }
+
+    public function create()
+    {
+        return view('semnas.create');
+    }
 }

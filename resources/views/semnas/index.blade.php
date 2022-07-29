@@ -31,7 +31,7 @@
                 <div class="col-md-10" id="response">
                     <div class="mid-header" id="mv-btn">
                         <br>
-                        <a class="btn btn-outline-dark" id="button" href="">Daftar</a>
+                        <a class="btn btn-outline-dark" id="button" href="/daftar/semnas">Daftar</a>
                         <a class="btn btn-outline-dark" id="button" href="#semnas">Tentang Semnas</a>
                     </div>
                 </div>

@@ -32,7 +32,7 @@
                     <div class="mid-header" id="mv-btn">
                         <h3>Ajang inovasi untuk para inovator</h3>
                         <br>
-                        <a class="btn btn-outline-dark" id="button" href="">Daftar</a>
+                        <a class="btn btn-outline-dark" id="button" href="/daftar/cip">Daftar</a>
                         <a class="btn btn-outline-dark" id="button" href="#cip">Tentang CIP</a>
                     </div>
                 </div>

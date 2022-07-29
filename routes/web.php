@@ -27,5 +27,13 @@ Route::get('/semnas', [App\Http\Controllers\SemNasController::class, 'index']);
 Route::get('/chempaign', [App\Http\Controllers\ChempaignController::class, 'index']);
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 
+Route::middleware(['auth'])->group(function() {
+    Route::get('/daftar/cc', [App\Http\Controllers\CCController::class, 'create']);
+    Route::get('/daftar/cod', [App\Http\Controllers\CODController::class, 'create']);
+    Route::get('/daftar/cip', [App\Http\Controllers\CIPController::class, 'create']);
+    Route::get('/daftar/semnas', [App\Http\Controllers\SemNasController::class, 'create']);
+    Route::get('/daftar/chempaign', [App\Http\Controllers\ChempaignController::class, 'create']);
+});
+
 
 Route::get('/file/download/panduan/{id}', [App\Http\Controllers\DownloadController::class, 'index'])->name('download');

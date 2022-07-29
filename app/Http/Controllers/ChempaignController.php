@@ -38,4 +38,9 @@ class ChempaignController extends Controller
 
         return view('chempaign.index', $data);
     }
+
+    public function create()
+    {
+        return view('chempaign.create');
+    }
 }
