@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('competition_id');
             $table->integer('person_type_id');
-            $table->integer('mahasiswa');
+            $table->integer('mahasiswa')->nullable();
             $table->string('name');
             $table->string('no_identitas')->nullable();
             $table->integer('gender')->nullable();

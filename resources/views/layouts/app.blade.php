@@ -66,4 +66,6 @@
     }
 </script>
 
+@yield('script')
+
 </html>

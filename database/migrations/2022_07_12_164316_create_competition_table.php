@@ -19,6 +19,8 @@ return new class extends Migration
             $table->text('address')->nullable();
             $table->text('school')->nullable();
             $table->integer('regional_id')->nullable();
+            $table->integer('status');
+            $table->text('payment')->nullable();
             $table->timestamps();
         });
     }

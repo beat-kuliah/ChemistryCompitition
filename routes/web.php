@@ -28,11 +28,26 @@ Route::get('/chempaign', [App\Http\Controllers\ChempaignController::class, 'inde
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
 
 Route::middleware(['auth'])->group(function() {
+    // Page pendaftaran
     Route::get('/daftar/cc', [App\Http\Controllers\CCController::class, 'create']);
     Route::get('/daftar/cod', [App\Http\Controllers\CODController::class, 'create']);
     Route::get('/daftar/cip', [App\Http\Controllers\CIPController::class, 'create']);
     Route::get('/daftar/semnas', [App\Http\Controllers\SemNasController::class, 'create']);
     Route::get('/daftar/chempaign', [App\Http\Controllers\ChempaignController::class, 'create']);
+
+    // Post data peserta pendataran
+    Route::post('/cc', [App\Http\Controllers\CCController::class, 'store']);
+    Route::post('/cod', [App\Http\Controllers\CODController::class, 'store']);
+    Route::post('/cip', [App\Http\Controllers\CIPController::class, 'store']);
+    Route::post('/semnas', [App\Http\Controllers\SemNasController::class, 'store']);
+    Route::post('/chempaign', [App\Http\Controllers\ChempaignController::class, 'store']);
+
+    // Page payment
+    Route::get('/payment/cc/{id}', [App\Http\Controllers\CCController::class, 'payment']);
+    Route::get('/payment/cod/{id}', [App\Http\Controllers\CODController::class, 'payment']);
+
+    // Post upload bukti pembayaran
+    Route::post('/payment/{id}', [App\Http\Controllers\Controller::class, 'store_payment']);
 });
 
 
