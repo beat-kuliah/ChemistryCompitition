@@ -49,6 +49,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/payment/cc/{id}', [App\Http\Controllers\CCController::class, 'payment']);
     Route::get('/payment/cod/{id}', [App\Http\Controllers\CODController::class, 'payment']);
     Route::get('/payment/cip/{id}', [App\Http\Controllers\CIPController::class, 'payment']);
+    Route::get('/payment/chempaign/{id}', [App\Http\Controllers\ChempaignController::class, 'payment']);
 
     // Get List Pendaftaran by user
     Route::get('/list_pendaftaran', [App\Http\Controllers\Controller::class, 'list_pendaftaran']);
