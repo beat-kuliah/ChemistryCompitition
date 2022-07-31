@@ -3,30 +3,27 @@
 @section('content')
 
 <div class="container top">
-    <h1>Payment Chemistry Open Debate</h1>
+    <h1>Payment Chemistry Innovation Project</h1>
     <br>
-    @if ($status == 3)
-        <h3>Pembayaran sudah diverifikasi oleh Panitia</h3>
-    @elseif ($status == 2)
-        <h3>Pembayaran sedang diverifikasi oleh Panitia</h3>
+    @if ($status == 4)
+        <h3>Abstrak sedang diverifikasi oleh Panitia</h3>
     @else
-        <h3>Silahkan melakukan pembayaran sebesar Rp {{ $price }} ke No.Rek 123456</h3>
+        <h3>Silahkan kirimkan Abstrak</h3>
         <form>
             <div class="form-group">
-                <label for="bukti">Upload Bukti Pembayaran</label>
+                <label for="bukti">Upload Abstrak</label>
                 <br><br>
                 <input type="file" class="form-control" id="bukti" aria-describedby="emailHelp" name="bukti_bayar" required>
             </div>
             <br>
         </form>
-        <button type="submit" class="btn btn-primary" onclick="payment()">Submit</button>
+        <button type="submit" class="btn btn-primary" onclick="abstrak()">Submit</button>
     @endif
-    
 </div>
 
 <style>
     body {
-        background-image: url('../../images/COD/bg-1.jpg');
+        background-image: url('../../images/CIP/bg-1.jpg');
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -37,13 +34,13 @@
     <script>
         var id = <?php echo $id ?>;
 
-        function payment(){
+        function abstrak(){
             var formData = new FormData();
             formData.append('bukti', document.querySelector('#bukti').files[0]);
             
             axios({
                 method: 'post',
-                url: '/payment/'+id,
+                url: '/abstrak/'+id,
                 data: formData,
                 headers: {
                     'Content-Type': 'multipart/form-data'
@@ -51,9 +48,9 @@
             }).then(response => {
                 if(response.data.result == 1){
                     window.alert('Upload bukti pembayaran berhasil');
-                    window.location.href = '/cod';
+                    window.location.href = '/cip';
                 }else {
-                    console.log('gagal');
+                    window.alert('Upload file gagal');
                 }
             })
             .catch(error => {

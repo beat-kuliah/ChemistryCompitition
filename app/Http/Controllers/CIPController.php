@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\LiniMasa;
+use App\Models\Competition;
+use Carbon\Carbon;
+use DB;
+use Auth;
 
 class CIPController extends Controller
 {
@@ -40,5 +44,160 @@ class CIPController extends Controller
     public function create()
     {
         return view('cip.create');
+    }
+
+    public function store(Request $req)
+    {
+
+        $validated = $req->validate([
+            'email_ketua' => ['required', 'email'],
+            'email_guru' => ['required', 'email'],
+        ]);
+
+        $path = storage_path('upload/peserta');
+        
+        $c_id = DB::table('competition')->latest('id')->first();
+        if($c_id != null){
+            $id = (int)$c_id->id + 1;
+        }else {
+            $id = 1;
+        }
+
+        $kartu_ketua = $req->file('kartu_pelajar_ketua');
+        $fileNameKartuKetua = $this->controller->setFileName($kartu_ketua);
+        
+        $foto_ketua = $req->file('foto_ketua');
+        $fileNameFotoKetua = $this->controller->setFileName($foto_ketua);
+
+        $kartu_anggota1 = $req->file('kartu_pelajar_anggota1');
+        $fileNameKartuAnggota1 = $this->controller->setFileName($kartu_anggota1);
+        
+        $foto_anggota1 = $req->file('foto_anggota1');
+        $fileNameFotoAnggota1 = $this->controller->setFileName($foto_anggota1);
+
+        $kartu_anggota2 = $req->file('kartu_pelajar_anggota2');
+        $fileNameKartuAnggota2 = $this->controller->setFileName($kartu_anggota2);
+        
+        $foto_anggota2 = $req->file('foto_anggota2');
+        $fileNameFotoAnggota2 = $this->controller->setFileName($foto_anggota2);
+
+        $competition = [
+            'id' => $id,
+            'chemistry_id' => 6,
+            'status' => 1,
+            'school' => $req->asal_sekolah,
+            'created_by' => Auth::user()->id,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ];
+
+        $ketua = [
+            'name' => $req->nama_ketua,
+            'competition_id' => $id,
+            'person_type_id' => 1,
+            'gender' => $req->jenis_kelamin_ketua,
+            'email' => $req->email_ketua,
+            'no_telp' => $req->no_ketua,
+            'scan_kartu_pelajar' => $fileNameKartuKetua,
+            'foto' => $fileNameFotoKetua,
+            'no_identitas' => $req->no_iden_ketua,
+            'mahasiswa' => $req->status_sekolah,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ];
+
+        $anggota1 = [
+            'name' => $req->nama_anggota1,
+            'competition_id' => $id,
+            'person_type_id' => 2,
+            'gender' => $req->jenis_kelamin_anggota1,
+            'no_identitas' => $req->no_iden_anggota1,
+            'scan_kartu_pelajar' => $fileNameKartuAnggota1,
+            'foto' => $fileNameFotoAnggota1,
+            'mahasiswa' => $req->status_sekolah,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ];
+
+        $anggota2 = [
+            'name' => $req->nama_anggota2,
+            'competition_id' => $id,
+            'person_type_id' => 2,
+            'gender' => $req->jenis_kelamin_anggot2,
+            'no_identitas' => $req->no_iden_anggota2,
+            'scan_kartu_pelajar' => $fileNameKartuAnggota2,
+            'foto' => $fileNameFotoAnggota2,
+            'mahasiswa' => $req->status_sekolah,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ];
+
+        $guru = [
+            'name' => $req->nama_guru,
+            'competition_id' => $id,
+            'person_type_id' => 3,
+            'email' => $req->email_guru,
+            'no_telp' => $req->no_guru,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ];
+
+        DB::beginTransaction();
+        try {
+            DB::table('competition')->insert($competition);
+            DB::table('person')->insert($ketua);
+            DB::table('person')->insert($anggota1);
+            DB::table('person')->insert($anggota2);
+            DB::table('person')->insert($guru);
+
+            $kartu_ketua->move($path, $fileNameKartuKetua);
+            $foto_ketua->move($path, $fileNameFotoKetua);
+            $kartu_anggota1->move($path, $fileNameKartuAnggota1);
+            $foto_anggota1->move($path, $fileNameFotoAnggota1);
+            $kartu_anggota2->move($path, $fileNameKartuAnggota2);
+            $foto_anggota2->move($path, $fileNameFotoAnggota2);
+
+            DB::commit();
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            return $e;
+        }
+
+        $result = [
+            'result' => 1,
+            'id' => $id
+        ];
+
+        // return $req;
+        return $result;
+    }
+
+    public function abstrak($id)
+    {
+        $success = Competition::find($id);
+
+        if($success->status == 5){
+            return redirect('/payment/cip/'.$id);
+        }else {
+            $data = [
+                'id' => $id,
+                'status' => $success->status,
+            ];
+
+            return view('cip.abstrak', $data);
+        }
+    }
+
+    public function payment($id)
+    {
+        $success = Competition::find($id);
+
+        $data = [
+            'id' => $id,
+            'status' => $success->status,
+        ];
+
+        return view('cip.payment', $data);
     }
 }

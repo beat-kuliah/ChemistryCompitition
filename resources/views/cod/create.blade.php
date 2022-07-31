@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label for="pasFotoKetua" class="form-label">Upload Pas Foto Ketua</label>
+                <label for="pasFotoKetua" class="form-label">Upload Pas Foto Ketua ( 3 x 4 )</label>
                 <div id="middle-height">
                     <input type="file" class="form-control" id="foto_ketua" name="pas_foto_ketua" autocomplete="off" required>
                 </div>
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label for="pasFotoAnggota1" class="form-label">Upload Pas Foto Anggota 1</label>
+                <label for="pasFotoAnggota1" class="form-label">Upload Pas Foto Anggota 1 ( 3 x 4 )</label>
                 <div id="middle-height">
                     <input type="file" class="form-control" id="foto_anggota1" name="pas_foto_anggota1" autocomplete="off" required>
                 </div>
@@ -113,7 +113,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label for="pasFotoAnggota2" class="form-label">Upload Pas Foto Anggota 2</label>
+                <label for="pasFotoAnggota2" class="form-label">Upload Pas Foto Anggota 2 ( 3 x 4 )</label>
                 <div id="middle-height">
                     <input type="file" class="form-control" id="foto_anggota2" name="pas_foto_anggota2" autocomplete="off" required>
                 </div>

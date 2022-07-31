@@ -22,6 +22,7 @@ class CompetitionSeeder extends Seeder
             'school' => 'school',
             'regional_id' => 1,
             'status' => 1,
+            'created_by' => 1,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

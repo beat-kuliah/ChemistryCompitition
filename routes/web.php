@@ -42,12 +42,20 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/semnas', [App\Http\Controllers\SemNasController::class, 'store']);
     Route::post('/chempaign', [App\Http\Controllers\ChempaignController::class, 'store']);
 
+    // Page abstrak
+    Route::get('/abstrak/cip/{id}', [App\Http\Controllers\CIPController::class, 'abstrak']);
+
     // Page payment
     Route::get('/payment/cc/{id}', [App\Http\Controllers\CCController::class, 'payment']);
     Route::get('/payment/cod/{id}', [App\Http\Controllers\CODController::class, 'payment']);
+    Route::get('/payment/cip/{id}', [App\Http\Controllers\CIPController::class, 'payment']);
 
+    // Get List Pendaftaran by user
+    Route::get('/list_pendaftaran', [App\Http\Controllers\Controller::class, 'list_pendaftaran']);
     // Post upload bukti pembayaran
     Route::post('/payment/{id}', [App\Http\Controllers\Controller::class, 'store_payment']);
+    // Post upload abstrak
+    Route::post('/abstrak/{id}', [App\Http\Controllers\Controller::class, 'store_abstrak']);
 });
 
 

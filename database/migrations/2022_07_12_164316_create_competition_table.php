@@ -16,11 +16,14 @@ return new class extends Migration
         Schema::create('competition', function (Blueprint $table) {
             $table->id();
             $table->integer('chemistry_id');
+            $table->integer('chempaign__type_id')->nullable();
             $table->text('address')->nullable();
             $table->text('school')->nullable();
             $table->integer('regional_id')->nullable();
-            $table->integer('status');
+            $table->integer('status')->default(1);
             $table->text('payment')->nullable();
+            $table->text('abstrak')->nullable();
+            $table->integer('created_by');
             $table->timestamps();
         });
     }

@@ -3,14 +3,14 @@
 @section('content')
 
 <div class="container top">
-    <h1>Payment Chemistry Open Debate</h1>
+    <h1>Payment Chemistry Innovation Project</h1>
     <br>
     @if ($status == 3)
         <h3>Pembayaran sudah diverifikasi oleh Panitia</h3>
     @elseif ($status == 2)
         <h3>Pembayaran sedang diverifikasi oleh Panitia</h3>
     @else
-        <h3>Silahkan melakukan pembayaran sebesar Rp {{ $price }} ke No.Rek 123456</h3>
+        <h3>Silahkan melakukan pembayaran sebesar Rp 115.000 ke No.Rek 123456</h3>
         <form>
             <div class="form-group">
                 <label for="bukti">Upload Bukti Pembayaran</label>
@@ -21,12 +21,11 @@
         </form>
         <button type="submit" class="btn btn-primary" onclick="payment()">Submit</button>
     @endif
-    
 </div>
 
 <style>
     body {
-        background-image: url('../../images/COD/bg-1.jpg');
+        background-image: url('../../images/CIP/bg-1.jpg');
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -51,7 +50,7 @@
             }).then(response => {
                 if(response.data.result == 1){
                     window.alert('Upload bukti pembayaran berhasil');
-                    window.location.href = '/cod';
+                    window.location.href = '/cc';
                 }else {
                     console.log('gagal');
                 }

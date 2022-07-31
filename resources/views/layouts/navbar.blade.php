@@ -51,8 +51,10 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @if (Auth::user()->isAdmin == 0)
+                        @if (Auth::user()->isAdmin == 1)
                             <a class="dropdown-item" href="/dashboard">Dashboard</a>
+                        @else
+                            <a class="dropdown-item" href="/list_pendaftaran">Pendaftaran</a>
                         @endif
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();

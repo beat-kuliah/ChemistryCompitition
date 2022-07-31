@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use DB;
+use Auth;
 
 class CCController extends Controller
 {
@@ -87,6 +88,7 @@ class CCController extends Controller
             'school' => $req->asal_sekolah,
             'regional_id' => $req->regional,
             'status' => 1,
+            'created_by' => Auth::user()->id,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ];

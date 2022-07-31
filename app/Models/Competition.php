@@ -19,6 +19,7 @@ class Competition extends Model
         'school',
         'regional_id',
         'status',
+        'created_by',
         'created_at',
         'updated_at'
     ];

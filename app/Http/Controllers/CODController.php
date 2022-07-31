@@ -7,6 +7,7 @@ use App\Models\LiniMasa;
 use App\Models\Competition;
 use Carbon\Carbon;
 use DB;
+use Auth;
 
 class CODController extends Controller
 {
@@ -82,8 +83,9 @@ class CODController extends Controller
 
         $competition = [
             'id' => $id,
-            'chemistry_id' => 5,
+            'chemistry_id' => 7,
             'status' => 1,
+            'created_by' => Auth::user()->id,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ];
@@ -172,8 +174,8 @@ class CODController extends Controller
         $linimasa = LiniMasa::where('chemistry_id', '=', 7)->orderBy('id', 'asc')->first();
         $check = Competition::where('status', '=', 3)
             ->where('chemistry_id', '=', '5')
-            ->whereBetween('updated_at', [$linimasa->date_1, $linimasa->date_2])
-            // ->where('updated_at', '<', $linimasa->date_2)
+            ->where('updated_at', '>=', $linimasa->date_1)
+            ->where('updated_at', '<=', $linimasa->date_2)
             ->count();
 
         $success = Competition::find($id);

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LiniMasa;
 use App\Http\Controllers\Controller;
+use Auth;
+use DB;
 
 class ChempaignController extends Controller
 {

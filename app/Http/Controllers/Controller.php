@@ -6,8 +6,10 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use App\Models\Competition;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Auth;
 use DB;
 
 class Controller extends BaseController
@@ -58,9 +60,9 @@ class Controller extends BaseController
         try {
             DB::table('competition')->where('id', '=', $id)->update($bukti);
 
-            DB::commit();
-
             $payment->move($path, $fileNamePayment);
+
+            DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
             return $e;
@@ -72,5 +74,51 @@ class Controller extends BaseController
         ];
 
         return $result;
+    }
+
+    public function store_abstrak(Request $req, $id)
+    {
+        $path = storage_path('upload/abstrak');
+
+        $time = Carbon::now()->format('dmYhisu');
+        $abstrak = $req->file('bukti');
+        $fileNameAbstrak = $time . '.' . $abstrak->getClientOriginalExtension();
+
+        $bukti = [
+            'status' => 4,
+            'abstrak' => $fileNameAbstrak,
+            'updated_at' => Carbon::now()
+        ];
+
+        DB::beginTransaction();
+        try {
+            DB::table('competition')->where('id', '=', $id)->update($bukti);
+
+            $abstrak->move($path, $fileNameAbstrak);
+
+            DB::commit();
+
+        } catch (\Exception $e) {
+            DB::rollback();
+            return $e;
+        }
+
+        $result = [
+            'result' => 1,
+            'id' => $id
+        ];
+
+        return $result;
+    }
+
+    public function list_pendaftaran()
+    {
+        $competition = Competition::where('created_by', Auth::user()->id)->get();
+
+        $data = [
+            'competition' => $competition,
+        ];
+
+        return view('list_pendaftaran.index', $data);
     }
 }
