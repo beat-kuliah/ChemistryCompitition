@@ -99,16 +99,17 @@
 
         axios({
             method: 'post',
-            url: '/lini_masa',
+            url: '/admin/lini_masa',
             data: formData,
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
         }).then(response => {
-            if(response.data.result == 1){
+            if(response.data == 1){
                 window.alert('Update berhasil dilakukan');
-                window.location.href = '/dashboard';
+                window.location.href = '/admin/lini_masa';
             }else {
+                console.log(response);
                 window.alert('Update gagal\nField tidak boleh kosong');
             }
         })
