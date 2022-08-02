@@ -15,6 +15,7 @@ class Competition extends Model
 
     protected $fillable = [
         'chemistry_id',
+        'chempaign_type-id',
         'address',
         'school',
         'regional_id',
@@ -28,6 +29,12 @@ class Competition extends Model
     {
         return $this->belongsTo(Chemistry::class, 'chemistry_id', 'id');
     }
+
+    public function chempaign()
+    {
+        return $this->belongsTo(Chemistry::class, 'chemistry_type_id', 'id');
+    }
+
 
     public function regional()
     {

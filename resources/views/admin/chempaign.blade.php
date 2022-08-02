@@ -10,12 +10,13 @@
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Tipe</th>
             <th scope="col">Ketua</th>
             <th scope="col">Anggota</th>
-            <th scope="col">Guru</th>
             <th scope="col">Status</th>
             <th scope="col">Pembayaran</th>
             <th scope="col">Konfirmasi</th>
+            <th scope="col">Detail</th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@
                 @foreach ($data as $key => $item)
                     <tr>
                         <th>{{ $key + 1 }}</th>
+                        <th>{{ $item->chemistry->name }}</th>
                         <td> {{ $item->person[0]->name }} </td>
                         <td> {{ $item->person[1]->name }} </td>
                         <td> {{ $item->person[2]->name }} </td>
@@ -43,6 +45,7 @@
                         <td>
                             <a class="btn btn-outline-info {{ $item->status == 3 || $item->status == 0 ? 'disabled' : ''}}" href="/admin/confirm/{{$item->id}}" {{ $item->status == 3 || $item->status == 4 ? 'disabled' : '' }}> Konfirmasi </a>
                             <a class="btn btn-danger {{ $item->status == 0 ? 'disabled' : ''}}" href="/admin/cancel/{{$item->id}}"> Batalkan </a>
+                            <td><a class="btn btn-outline-warning" href="/admin/chempaign_detail/{{$item->id}}"> Detail </button></td>
                         </td>
                     </tr>
                 @endforeach

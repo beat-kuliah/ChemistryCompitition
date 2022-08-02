@@ -16,6 +16,7 @@
             <th scope="col">Status</th>
             <th scope="col">Pembayaran</th>
             <th scope="col">Konfirmasi</th>
+            <th scope="col">Detail</th>
           </tr>
         </thead>
         <tbody>
@@ -28,8 +29,8 @@
                     <tr>
                         <th>{{ $key + 1 }}</th>
                         <td> {{ $item->person[0]->name }} </td>
-                        <td> {{ $item->person[1]->name }} </td>
-                        <td> {{ $item->person[2]->name }} </td>
+                        <td> {{ $item->person[1]->name }} , {{ $item->person[2]->name }} </td>
+                        <td> {{ $item->person[3]->name }} </td>
                         @if( $item->status == 1)
                             <td> Belum Dibayar </td>
                         @elseif( $item->status == 2 )
@@ -44,6 +45,7 @@
                             <a class="btn btn-outline-info {{ $item->status == 3 || $item->status == 4 ? 'disabled' : ''}}" href="/admin/confirm/{{$item->id}}" {{ $item->status == 3 || $item->status == 4 ? 'disabled' : '' }}> Konfirmasi </a>
                             <a class="btn btn-danger {{ $item->status == 4 ? 'disabled' : ''}}" href="/admin/cancel/{{$item->id}}"> Batalkan </a>
                         </td>
+                        <td><a class="btn btn-outline-warning" href="/admin/cip_detail/{{$item->id}}"> Detail </button></td>
                     </tr>
                 @endforeach
             @endif

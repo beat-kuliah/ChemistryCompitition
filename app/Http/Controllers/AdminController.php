@@ -36,4 +36,35 @@ class AdminController extends Controller
         $data = Competition::where('chemistry_id', 9)->get();
         return view('admin.chempaign',[ 'data' => $data]);
     }
+
+    public function detailCC($id)
+    {
+        $data = Competition::find($id);
+        return view('admin.details.cc',[ 'data' => $data]);
+    }
+
+    public function detailCOD($id)
+    {
+        $data = Competition::find($id);
+        return view('admin.details.cod',[ 'data' => $data]);
+    }
+
+    public function detailCIP($id)
+    {
+        $data = Competition::find($id);
+        return view('admin.details.cip',[ 'data' => $data]);
+    }
+
+    public function detailSemnas($id)
+    {
+        $data = Competition::find($id);
+        return view('admin.details.semnas',[ 'data' => $data]);
+    }
+
+    public function detailChempaign($id)
+    {
+        $data = Competition::find($id);
+        return view('admin.details.chempaign',[ 'data' => $data]);
+    }
+
 }

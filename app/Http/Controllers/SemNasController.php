@@ -112,8 +112,4 @@ class SemNasController extends Controller
         return $result;
     }
 
-    public function detail($id)
-    {
-        
-    }
 }
