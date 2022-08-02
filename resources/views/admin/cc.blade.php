@@ -16,6 +16,7 @@
             <th scope="col">Status</th>
             <th scope="col">Pembayaran</th>
             <th scope="col">Konfirmasi</th>
+            <th scope="col">Detail</th>
           </tr>
         </thead>
         <tbody>
@@ -44,6 +45,7 @@
                             <a class="btn btn-outline-info {{ $item->status == 3 || $item->status == 4 ? 'disabled' : ''}}" href="/admin/confirm/{{$item->id}}" {{ $item->status == 3 || $item->status == 4 ? 'disabled' : '' }}> Konfirmasi </a>
                             <a class="btn btn-danger {{ $item->status == 4 ? 'disabled' : ''}}" href="/admin/cancel/{{$item->id}}"> Batalkan </a>
                         </td>
+                        <td><a class="btn btn-outline-warning" href="/admin/cc_detail/{{$item->id}}"> Detail </button></td>
                     </tr>
                 @endforeach
             @endif

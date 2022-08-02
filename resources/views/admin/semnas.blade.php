@@ -10,7 +10,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Ketua</th>
+            <th scope="col">Nama</th>
             <th scope="col">Status</th>
             <th scope="col">Instastory</th>
             <th scope="col">Konfirmasi</th>

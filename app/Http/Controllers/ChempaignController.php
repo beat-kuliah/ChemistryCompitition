@@ -76,7 +76,8 @@ class ChempaignController extends Controller
 
         $competition = [
             'id' => $id,
-            'chemistry_id' => $req->chempaign_type,
+            'chemistry_id' => 9,
+            'chempaign_type_id' => $req->chempaign_type,
             'status' => 1,
             'school' => $req->instansi,
             'address' => $req->alamat,
