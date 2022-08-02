@@ -69,7 +69,7 @@ class SemNasController extends Controller
         $competition = [
             'id' => $id,
             'chemistry_id' => 8,
-            'status' => 1,
+            'status' => 2,
             'school' => $req->instansi,
             'abstrak' => $fileName,
             'created_by' => Auth::user()->id,

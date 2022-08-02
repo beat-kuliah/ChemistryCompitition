@@ -29,6 +29,9 @@ class DatabaseSeeder extends Seeder
             PersonTypeSeeder::class,
             UserSeeder::class,
             LiniMasaSeeder::class,
+            NewsSeeder::class,
+            PartnerSeeder::class,
+            SponsorSeeder::class,
         ]);
     }
 }

@@ -71,14 +71,15 @@
         <div id="sponsor" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" style="height: 400px;">
                 <div class="carousel-item active">
-                    <img src="images/Landing Page/cc.png" class="d-block mx-auto img-fluid" alt="...">
+                        <img src="{{ $sponsor[0]->image }}" class="d-block mx-auto" alt="..." width="auto" height="400px">
                 </div>
-                <div class="carousel-item">
-                    <img src="images/Landing Page/chempaign.png" class="d-block mx-auto img-fluid" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/Landing Page/cip.png" class="d-block mx-auto img-fluid" alt="...">
-                </div>
+                @if($sponsor->count() > 1 )
+                    @for ($i = 1; $i < $sponsor->count(); $i++)
+                        <div class="carousel-item">
+                            <img src="{{ $sponsor[$i]->image }}" class="d-block mx-auto" alt="..." width="auto" height="400px">
+                        </div>
+                    @endfor
+                @endif
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#sponsor" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -89,6 +90,10 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
+        <div class="my-5"></div>
+        <div class="my-5"></div>
+
         </center>
         <div class="partner">
             <h1 class="text-center"> Media Partners </h1> <br>
@@ -97,14 +102,15 @@
         <div id="partner" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner" style="height: 400px;">
                 <div class="carousel-item active">
-                        <img src="images/Landing Page/cc.png" class="d-block mx-auto img-fluid" alt="...">
+                        <img src="{{ $partner[0]->image }}" class="d-block mx-auto" alt="..." width="auto" height="400px">
                 </div>
-                <div class="carousel-item">
-                    <img src="images/Landing Page/chempaign.png" class="d-block mx-auto img-fluid" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/Landing Page/bg-1.png" class="d-block mx-auto img-fluid" alt="...">
-                </div>
+                @if($partner->count() > 1 )
+                    @for ($i = 1; $i < $partner->count(); $i++)
+                        <div class="carousel-item">
+                            <img src="{{ $partner[$i]->image }}" class="d-block mx-auto" alt="..." width="auto" height="400px">
+                        </div>
+                    @endfor
+                @endif
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#partner" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>

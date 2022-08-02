@@ -7,6 +7,8 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Models\Competition;
+use App\Models\Sponsor;
+use App\Models\Partner;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
@@ -15,6 +17,19 @@ use DB;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function landing_page()
+    {
+        $sponsor = Sponsor::get();
+        $partner = Partner::get();
+
+        $data = [
+            'sponsor' => $sponsor,
+            'partner' => $partner,
+        ];
+
+        return view('landing_page.index', $data);
+    }
 
     public function setDateFormat( $date ){
         $bulan = array (

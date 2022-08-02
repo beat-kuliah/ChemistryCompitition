@@ -10,9 +10,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('landing_page.index');
-});
+Route::get('/', [App\Http\Controllers\Controller::class, 'landing_page']);
 
 Auth::routes();
 
