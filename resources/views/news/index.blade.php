@@ -24,27 +24,32 @@
     
                     <div class="carousel-inner">
                         @foreach ($news as $key => $new)
-                            @if ($key % 3 == 0 && $key < 3)
+                            @if($key % 3 == 0 && $key == 0)
                                 <div class="carousel-item active">
-                                    <div class="row">
+                                <div class="row">
                             @elseif ($key % 3 == 0)
                                 <div class="carousel-item">
-                                    <div class="row">
+                                <div class="row">
                             @endif
-                                    <div class="col-md-4 mb-3">
-                                        <div class="card">
-                                            <img class="img-fluid" alt="100%x280" src="{{ $new->image }}">
-                                            <div class="card-body">
-                                                <h4 class="card-title">{{ $new->title }}</h4>
-                                                <p class="card-text">{{ $new->description }}</p>
-                                                <a class="btn btn-outline-info" href="{{ $new->link }}"> Lihat Selengkapnya </a>
-                                            </div>
-        
-                                        </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img class="img-thumbnail" alt="100%x280" src="{{ $new->image }}">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{ $new->title }}</h4>
+                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <button class="btn btn-outline-info"> Lihat Selengkapnya </button>
                                     </div>
-        
-                            @if ($key % 3 == 0)
-                                    </div>
+
+                                </div>
+                            </div>
+                            @if($key % 3 == 2 && $key == 2)
+                                </div>
+                                </div>
+                            @elseif ($key % 3 == 2)
+                                </div>
+                                </div>
+                            @elseif ($key == count($news)-1)
+                                </div>
                                 </div>
                             @endif
                         @endforeach

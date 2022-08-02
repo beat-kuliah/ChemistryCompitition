@@ -13,8 +13,9 @@ class NewsController extends Controller
 
         $data = [
             'news' => $news,
+            'count' => count($news),
         ];
-        
+
         return view('news.index', $data);
     }
 }

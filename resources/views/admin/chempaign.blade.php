@@ -28,10 +28,22 @@
                 @foreach ($data as $key => $item)
                     <tr>
                         <th>{{ $key + 1 }}</th>
-                        <th>{{ $item->chemistry->name }}</th>
-                        <td> {{ $item->person[0]->name }} </td>
-                        <td> {{ $item->person[1]->name }} </td>
-                        <td> {{ $item->person[2]->name }} </td>
+                        <th>{{ $item->chempaign->name }}</th>
+                        <td>{{ $item->person[0]->name }}</td>
+                        <td>
+                        @if($item->chempaign_type_id == 2)
+                            @foreach ($item->person as $map => $p)
+                                @if($map > 0)
+                                    @if($map > 1)
+                                    <br>
+                                    @endif
+                                    {{ $p->name }}
+                                @endif
+                            @endforeach
+                        @else
+                            -
+                        @endif
+                        </td>
                         @if( $item->status == 1)
                             <td> Belum Dibayar </td>
                         @elseif( $item->status == 2 )

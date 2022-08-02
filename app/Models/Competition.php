@@ -32,7 +32,7 @@ class Competition extends Model
 
     public function chempaign()
     {
-        return $this->belongsTo(Chemistry::class, 'chemistry_type_id', 'id');
+        return $this->belongsTo(Chemistry::class, 'chempaign_type_id', 'id');
     }
 
 

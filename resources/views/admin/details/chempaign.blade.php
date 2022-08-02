@@ -6,7 +6,7 @@
         <h1 class="h2"> ID : {{ $data->id }} </h1>
     </div>
 
-    <p> Tipe Chempaign :  {{ $item->chemistry->name }}</p>
+    <p> Tipe Chempaign :  {{ $data->chempaign->name }}</p>
     <p> Nama Ketua : {{ $data->person[0]->name }}</p>
     @if ( count($data->person) > 1 )
         @for ( $i = 1; $i <= count($data->person); $i++ )
