@@ -20,5 +20,12 @@ class DownloadController extends Controller
 
         return $result;
     }
-    
+
+    public function payment($id)
+    {
+        $path = storage_path('upload/payment/'.$id);
+        $result = Response()->download($path);
+
+        return $result;
+    }    
 }

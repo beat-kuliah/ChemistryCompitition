@@ -121,4 +121,22 @@ class Controller extends BaseController
 
         return view('list_pendaftaran.index', $data);
     }
+
+    public function konfirmasi($id)
+    {
+        $competition = Competition::find($id);
+        $competition->status = 3;
+        $competition->save();
+
+        return redirect()->back()->with('alert','Berhasil Update');
+    }
+
+    public function batalkan($id)
+    {
+        $competition = Competition::find($id);
+        $competition->status = 4;
+        $competition->save();
+
+        return redirect()->back()->with('alert','Berhasil Update');
+    }
 }

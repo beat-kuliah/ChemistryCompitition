@@ -30,7 +30,7 @@
 
 <body>
     {{-- @include('admin.layouts.header') --}}
-    @include('layouts.navbar')
+    {{-- @include('layouts.navbar') --}}
     <div class="container">
         @include('admin.layouts.navbar')
     </div>

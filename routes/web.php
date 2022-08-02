@@ -23,6 +23,17 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
     Route::get('/admin/lini_masa', [App\Http\Controllers\LiniMasaController::class, 'index']);
     // Update Lini masa
     Route::post('/admin/lini_masa', [App\Http\Controllers\LiniMasaController::class, 'update']);
+
+    Route::get('/admin/cc', [App\Http\Controllers\AdminController::class, 'cc']);
+    Route::get('/admin/cod', [App\Http\Controllers\AdminController::class, 'cod']);
+    Route::get('/admin/cip', [App\Http\Controllers\AdminController::class, 'cip']);
+    Route::get('/admin/semnas', [App\Http\Controllers\AdminController::class, 'semnas']);
+    Route::get('/admin/chempaign', [App\Http\Controllers\AdminController::class, 'chempaign']);
+
+    Route::get('/admin/payment/{id}', [App\Http\Controllers\DownloadController::class, 'payment']);
+
+    Route::get('/admin/confirm/{id}', [App\Http\Controllers\Controller::class, 'konfirmasi']);
+    Route::get('/admin/cancel/{id}', [App\Http\Controllers\Controller::class, 'batalkan']);
 });
 
 Route::get('/cc', [App\Http\Controllers\CCController::class, 'index']);

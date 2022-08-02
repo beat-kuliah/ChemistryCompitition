@@ -8,16 +8,13 @@
 
     <div class="row">
         <div class="row">
-            <a href="/" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">Home</a>
             <a href="/admin/cc" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">CC</a>
             <a href="/admin/cod" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">COD</a>
+            <a href="/admin/cip" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">CIP</a>
         </div>
         <div class="row">
-            <a href="/admin/cip" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">CIP</a>
             <a href="/admin/semnas" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">Semnas</a>
             <a href="/admin/chempaign" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">Chempaign</a>
-        </div>
-        <div class="row">
             <a href="/admin/lini_masa" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">Lini Masa</a>
         </div>
     </div>
