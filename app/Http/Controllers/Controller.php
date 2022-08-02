@@ -134,7 +134,7 @@ class Controller extends BaseController
     public function batalkan($id)
     {
         $competition = Competition::find($id);
-        $competition->status = 4;
+        $competition->status = 0;
         $competition->save();
 
         return redirect()->back()->with('alert','Berhasil Update');

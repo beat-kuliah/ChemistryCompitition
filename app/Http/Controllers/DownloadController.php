@@ -27,5 +27,13 @@ class DownloadController extends Controller
         $result = Response()->download($path);
 
         return $result;
+    } 
+    
+    public function peserta($id)
+    {
+        $path = storage_path('upload/peserta/'.$id);
+        $result = Response()->download($path);
+
+        return $result;
     }    
 }

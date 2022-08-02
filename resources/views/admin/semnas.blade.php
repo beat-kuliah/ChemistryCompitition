@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2"> Chemistry Competition </h1>
+        <h1 class="h2"> Seminar Nasional </h1>
     </div>
 
     <table class="table">
@@ -11,11 +11,10 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Ketua</th>
-            <th scope="col">Anggota</th>
-            <th scope="col">Guru</th>
             <th scope="col">Status</th>
-            <th scope="col">Pembayaran</th>
+            <th scope="col">Instastory</th>
             <th scope="col">Konfirmasi</th>
+            <th scope="col">Detail</th>
           </tr>
         </thead>
         <tbody>
@@ -28,8 +27,6 @@
                     <tr>
                         <th>{{ $key + 1 }}</th>
                         <td> {{ $item->person[0]->name }} </td>
-                        <td> {{ $item->person[1]->name }} </td>
-                        <td> {{ $item->person[2]->name }} </td>
                         @if( $item->status == 1)
                             <td> Belum Dibayar </td>
                         @elseif( $item->status == 2 )
@@ -39,11 +36,12 @@
                         @else
                             <td> Dibatalkan </td>
                         @endif
-                        <td> <a download="Payment-{{$item->payment}}" href="/admin/payment/{{$item->payment}}" title="Payment">{{$item->payment}}</a> </td>
+                        <td> <a download="Instastory-{{$item->person[0]->name}}" href="/admin/peserta/{{$item->abstrak}}" title="Instastory">{{$item->abstrak}}</a> </td>
                         <td>
                             <a class="btn btn-outline-info {{ $item->status == 3 || $item->status == 4 ? 'disabled' : ''}}" href="/admin/confirm/{{$item->id}}" {{ $item->status == 3 || $item->status == 4 ? 'disabled' : '' }}> Konfirmasi </a>
                             <a class="btn btn-danger {{ $item->status == 4 ? 'disabled' : ''}}" href="/admin/cancel/{{$item->id}}"> Batalkan </a>
                         </td>
+                        <td><a class="btn btn-outline-warning" href="/admin/semnas_detail/{{$item->id}}"> Detail </button></td>
                     </tr>
                 @endforeach
             @endif

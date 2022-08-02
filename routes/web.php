@@ -31,9 +31,16 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
     Route::get('/admin/chempaign', [App\Http\Controllers\AdminController::class, 'chempaign']);
 
     Route::get('/admin/payment/{id}', [App\Http\Controllers\DownloadController::class, 'payment']);
+    Route::get('/admin/peserta/{id}', [App\Http\Controllers\DownloadController::class, 'peserta']);
 
     Route::get('/admin/confirm/{id}', [App\Http\Controllers\Controller::class, 'konfirmasi']);
     Route::get('/admin/cancel/{id}', [App\Http\Controllers\Controller::class, 'batalkan']);
+
+    Route::get('/admin/semnas_detail/{id}', [App\Http\Controllers\SemnasController::class, 'detail']); 
+    Route::get('/admin/cc_detail/{id}', [App\Http\Controllers\CCController::class, 'detail']);
+    Route::get('/admin/cip_detail/{id}', [App\Http\Controllers\CIPController::class, 'detail']);
+    Route::get('/admin/cod_detail/{id}', [App\Http\Controllers\CODController::class, 'detail']);
+    Route::get('/admin/chempaign_detail/{id}', [App\Http\Controllers\ChempaignController::class, 'detail']);
 });
 
 Route::get('/cc', [App\Http\Controllers\CCController::class, 'index']);

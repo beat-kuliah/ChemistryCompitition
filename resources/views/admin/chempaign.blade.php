@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2"> CC </h1>
+        <h1 class="h2"> Chempaign </h1>
     </div>
 
     <table class="table">
@@ -14,7 +14,7 @@
             <th scope="col">Anggota</th>
             <th scope="col">Guru</th>
             <th scope="col">Status</th>
-            <th scope="col">Bukti</th>
+            <th scope="col">Pembayaran</th>
             <th scope="col">Konfirmasi</th>
           </tr>
         </thead>
@@ -41,8 +41,8 @@
                         @endif
                         <td> <a download="Payment-{{$item->payment}}" href="/admin/payment/{{$item->payment}}" title="Payment">{{$item->payment}}</a> </td>
                         <td>
-                            <a class="btn btn-outline-info {{ $item->status == 3 || $item->status == 4 ? 'disabled' : ''}}" href="/admin/confirm/{{$item->id}}" {{ $item->status == 3 || $item->status == 4 ? 'disabled' : '' }}> Konfirmasi </a>
-                            <a class="btn btn-danger {{ $item->status == 4 ? 'disabled' : ''}}" href="/admin/cancel/{{$item->id}}"> Batalkan </a>
+                            <a class="btn btn-outline-info {{ $item->status == 3 || $item->status == 0 ? 'disabled' : ''}}" href="/admin/confirm/{{$item->id}}" {{ $item->status == 3 || $item->status == 4 ? 'disabled' : '' }}> Konfirmasi </a>
+                            <a class="btn btn-danger {{ $item->status == 0 ? 'disabled' : ''}}" href="/admin/cancel/{{$item->id}}"> Batalkan </a>
                         </td>
                     </tr>
                 @endforeach
