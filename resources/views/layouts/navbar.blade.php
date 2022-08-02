@@ -51,7 +51,7 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @if (Auth::user()->isAdmin == 1)
+                        @if (Auth::user()->is_admin == 1)
                             <a class="dropdown-item" href="/dashboard">Dashboard</a>
                         @else
                             <a class="dropdown-item" href="/list_pendaftaran">Pendaftaran</a>

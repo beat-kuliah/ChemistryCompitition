@@ -5,6 +5,13 @@
     color: black;
 }
 
+#form_admin {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border-radius: 10px;
+    color: black;
+}
+
 .top {
     margin-top: 60px;
 }

@@ -104,15 +104,18 @@ class ChempaignController extends Controller
         try {
             DB::table('competition')->insert($competition);
             DB::table('person')->insert($ketua);
-            foreach ($req->nama_peserta as $key => $nama) {
-                DB::table('person')->insert([
-                    'name' => $nama,
-                    'competition_id' => $id,
-                    'person_type_id' => 2,
-                    'created_at' => Carbon::now(),
-                    'updated_at' => Carbon::now()
-                ]);
-            }
+
+            if($req->chempaign_type == 2){
+                foreach ($req->nama_peserta as $key => $nama) {
+                    DB::table('person')->insert([
+                        'name' => $nama,
+                        'competition_id' => $id,
+                        'person_type_id' => 2,
+                        'created_at' => Carbon::now(),
+                        'updated_at' => Carbon::now()
+                    ]);
+                };
+            };
 
             $kartu->move($path, $fileName);
 

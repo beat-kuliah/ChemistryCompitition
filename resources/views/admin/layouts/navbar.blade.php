@@ -14,7 +14,7 @@
     <div class="position-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/dsahboard">Dashboard</a>
+                <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/">Home</a>
@@ -36,7 +36,7 @@
                 <a class="nav-link" aria-current="page" href="/admin/chempaign">Chempaign</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/admin/news">News</a>
+                <a class="nav-link" aria-current="page" href="/admin/lini_masa">Lini Masa</a>
             </li>
         </ul>
     </div>

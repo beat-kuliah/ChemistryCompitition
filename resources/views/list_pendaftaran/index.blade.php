@@ -21,10 +21,17 @@
                     @if ($comp->chemistry_id == 7)
                         <a href="/payment/cod/{{ $comp->id }}" class="btn btn-info" style="float: right"> Silahkan Lakukan Pembayaran </a>
                     @endif
+                    @if ($comp->chemistry_id == 1 || $comp->chemistry_id == 2 || $comp->chemistry_id == 3 || $comp->chemistry_id == 4)
+                        <a href="/payment/chempaign/{{ $comp->id }}" class="btn btn-info" style="float: right"> Silahkan Lakukan Pembayaran </a>
+                    @endif
                 @elseif ($comp->status == 2)
                     <p>Menunggu verifikasi</p>
                 @elseif ($comp->status == 3)
-                    <p>Sudah verifikasi pembayaran</p>
+                    @if ($comp->chemistry_id == 1 || $comp->chemistry_id == 2 || $comp->chemistry_id == 3 || $comp->chemistry_id == 4)
+                        <p> Pengumpulan berkas dikirimkan melalui email admin@gmail.com disertai judul dan deskripsi serta nama individu atau ketua tim</p>
+                    @else
+                        <p>Sudah verifikasi pembayaran</p>
+                    @endif
                 @elseif ($comp->status == 4)
                     <a href="/abstrak/cip/{{ $comp->id }}" class="btn btn-info" style="float: right"> Silahkan Lakukan Pembayaran </a>
                 @elseif ($comp->status == 5)

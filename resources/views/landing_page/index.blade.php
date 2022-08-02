@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container pt-2">
+<div class="container pt-5">
     <div class="row mt-5">
         {{-- <div class="col-ms-12"> --}}
             <div class="col-ms-2">
@@ -62,22 +62,61 @@
             </div>
         </div>
     </div>
-    <div class="my-5 py-5"></div>
-    <div class="sponsor mt-5">
-        <h1 class="text-center"> Our Sponsor </h1>
+    <div class="my-5"></div>
+    <div class="container">
+        <div class="sponsor mt-5">
+            <h1 class="text-center"> Our Sponsor </h1><br>
+        </div>
+        <center>
+        <div id="sponsor" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" style="height: 400px;">
+                <div class="carousel-item active">
+                    <img src="images/Landing Page/cc.png" class="d-block mx-auto img-fluid" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Landing Page/chempaign.png" class="d-block mx-auto img-fluid" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Landing Page/cip.png" class="d-block mx-auto img-fluid" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#sponsor" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sponsor" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </center>
+        <div class="partner">
+            <h1 class="text-center"> Media Partners </h1> <br>
+        </div>
+        <center>
+        <div id="partner" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" style="height: 400px;">
+                <div class="carousel-item active">
+                        <img src="images/Landing Page/cc.png" class="d-block mx-auto img-fluid" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Landing Page/chempaign.png" class="d-block mx-auto img-fluid" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/Landing Page/bg-1.png" class="d-block mx-auto img-fluid" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#partner" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#partner" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </center>
     </div>
-    <div class="my-5 py-5"></div>
-    <div class="partner mt-5">
-        <h1 class="text-center"> Media Partners </h1>
-    </div>
-    <div class="my-5 py-5"></div>
-    <div class="my-5 py-5"></div>
-    <div class="my-5 py-5"></div>
-    <div class="contact">
-        <h1 class="text-center mt-5"> Hubungi Kami </h1>
-    </div>
-    <div class="my-5 py-5"></div>
-    <div class="my-5 py-5"></div>
 </div>
 
 <style>

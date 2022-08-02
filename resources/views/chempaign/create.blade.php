@@ -20,7 +20,7 @@
             <div class="mb-3">
                 <label for="namaPeserta" class="form-label">Nama peserta</label>
                 <div id="middle-height">
-                    <input type="text" class="form-control" name="nama_peserta" autocomplete="off" required>
+                    <input type="text" class="form-control" name="nama_ketua" autocomplete="off" required>
                 </div>
             </div>
             <div class="mb-3">

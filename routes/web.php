@@ -17,7 +17,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth', 'isAdmin'])->group(function() {
+    // Dashboard Admin
     Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    // Page Lini masa
+    Route::get('/admin/lini_masa', [App\Http\Controllers\LiniMasaController::class, 'index']);
+    // Page Lini masa
+    Route::get('/admin/lini_masa/show', [App\Http\Controllers\LiniMasaController::class, 'show']);
+    // Page Lini masa
+    Route::get('/admin/lini_masa/update', [App\Http\Controllers\LiniMasaController::class, 'update']);
 });
 
 Route::get('/cc', [App\Http\Controllers\CCController::class, 'index']);

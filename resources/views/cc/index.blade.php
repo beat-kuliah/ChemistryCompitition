@@ -11,7 +11,7 @@
             <img src="images/CC/supri-1.png" class="rounded img-fluid" alt="...">
         </div>
     </div>
-    <h1 class="fw-bold"> Chemistry Fair UI 2022 </h1>
+    <h1 class="fw-bold"> Chemistry Competition </h1>
     <div class="container">
         <div class="row">
             {{-- <div class="col-ms-12"> --}}
