@@ -142,7 +142,7 @@
 
 <style>
     body {
-        background-image: url('images/COD/bg-1.jpg');
+        background-image: url({{url('images/COD/bg-1.jpg')}});
         background-repeat: no-repeat;
         background-size: cover;
     }

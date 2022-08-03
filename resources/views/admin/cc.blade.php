@@ -14,6 +14,7 @@
             <th scope="col">Anggota</th>
             <th scope="col">Guru</th>
             <th scope="col">Status</th>
+            <th scope="col">Lolos/Tidak</th>
             <th scope="col">Pembayaran</th>
             <th scope="col">Konfirmasi</th>
             <th scope="col">Detail</th>
@@ -22,7 +23,7 @@
         <tbody>
             @if(count($data) == 0)
                 <tr>
-                    <td colspan="5" class="text-center"> Belum ada data </td>
+                    <td colspan="9" class="text-center"> Belum ada data </td>
                 </tr>
             @else
                 @foreach ($data as $key => $item)
@@ -37,13 +38,20 @@
                             <td> Menunggu Konfirmasi </td>
                         @elseif ($item->status == 3)
                             <td> Sudah Dikonfirmasi </td>
-                        @else
+                        @elseif ($item->status == 0)
                             <td> Dibatalkan </td>
+                        @endif
+                        @if( $item->lolos == 1)
+                            <td> Lolos </td>
+                        @elseif ($item->lolos == 2)
+                            <td> Tidak Lolos : {{$item->alasan}} </td>
+                        @else
+                            <td> Belum Verif </td>
                         @endif
                         <td> <a download="Payment-{{$item->payment}}" href="/admin/payment/{{$item->payment}}" title="Payment">{{$item->payment}}</a> </td>
                         <td>
-                            <a class="btn btn-outline-info {{ $item->status == 3 || $item->status == 4 ? 'disabled' : ''}}" href="/admin/confirm/{{$item->id}}" {{ $item->status == 3 || $item->status == 4 ? 'disabled' : '' }}> Konfirmasi </a>
-                            <a class="btn btn-danger {{ $item->status == 4 ? 'disabled' : ''}}" href="/admin/cancel/{{$item->id}}"> Batalkan </a>
+                            <a class="btn btn-outline-info {{ $item->status == 3 || $item->status == 0 ? 'disabled' : ''}}" href="/admin/confirm/{{$item->id}}" {{ $item->status == 3 || $item->status == 0 ? 'disabled' : '' }}> Konfirmasi </a>
+                            <a class="btn btn-danger {{ $item->status == 0 ? 'disabled' : ''}}" href="/admin/cancel/{{$item->id}}"> Batalkan </a>
                         </td>
                         <td><a class="btn btn-outline-warning" href="/admin/cc_detail/{{$item->id}}"> Detail </button></td>
                     </tr>

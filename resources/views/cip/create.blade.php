@@ -174,7 +174,7 @@
 
 <style>
     body {
-        background-image: url('../images/cip/bg-1.jpg');
+        background-image: url({{url('images/cip/bg-1.jpg')}});
         background-repeat: no-repeat;
         background-size: cover;
     }

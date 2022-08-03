@@ -10,5 +10,17 @@
     <p> Nama Lengkap : {{ $data->person[0]->name }}</p>
     <p> No Telp : {{ $data->person[0]->no_telp }}</p>
     <p> Email : {{ $data->person[0]->email }} </p>
+
+    <h5> Setujui :  <a href="\admin\acc\{{$data->id}}" class="btn btn-primary mx-3"> Lolos </a></h5>
+    <h5> Tolak : </h5> 
+    <form action="\admin\reject\{{$data->id}}" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="form-group">
+            <label>Alasan : </label>
+            <textarea class="form-control" rows="3" name="reason" required></textarea>
+        </div>
+        <br>
+        <button  class="btn btn-danger" type="submit">Tidak Lolos</button>
+    </form>
 </div>
 @endsection

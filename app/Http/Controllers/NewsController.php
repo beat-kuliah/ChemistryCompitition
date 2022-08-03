@@ -18,4 +18,15 @@ class NewsController extends Controller
 
         return view('news.index', $data);
     }
+
+    public function desc($id)
+    {
+        $news = News::find($id);
+
+        $data = [
+            'news' => $news,
+        ];
+
+        return view('news.desc', $data);
+    }
 }

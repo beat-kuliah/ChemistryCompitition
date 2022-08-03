@@ -33,13 +33,12 @@
                             @endif
                             <div class="col-md-4 mb-3">
                                 <div class="card">
-                                    <img class="img-thumbnail" alt="100%x280" src="{{ $new->image }}">
+                                    <img class="img-thumbnail" alt="100%x280" src="{{ url('/upload/'.$new->image) }}" style="width 100%; height: 180px; object-fit:cover">
                                     <div class="card-body">
                                         <h4 class="card-title">{{ $new->title }}</h4>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <button class="btn btn-outline-info"> Lihat Selengkapnya </button>
+                                        <p class="card-text"> {{ substr($new->description,0, 150) }} ...</p>
+                                        <a class="btn btn-outline-info" href="/news/{{ $new->id }}"> Lihat Selengkapnya </a>
                                     </div>
-
                                 </div>
                             </div>
                             @if($key % 3 == 2 && $key == 2)
@@ -62,7 +61,7 @@
 
 <style>
     body {
-        background-image: url('images/News/background.png');
+        background-image: url({{url('images/News/background.png')}});
         background-repeat: no-repeat;
         background-size: cover;
     }

@@ -17,6 +17,9 @@
             <a href="/admin/chempaign" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">Chempaign</a>
             <a href="/admin/lini_masa" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">Lini Masa</a>
         </div>
+        <div class="row">
+            <a href="/admin/news" class="btn btn-outline-primary col-lg-3 mb-3" style="padding:50px; margin:10px">News</a>
+        </div>
     </div>
 </div>
 @endsection

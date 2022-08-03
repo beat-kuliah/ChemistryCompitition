@@ -25,7 +25,7 @@
 
 <style>
     body {
-        background-image: url('../../images/CIP/bg-1.jpg');
+        background-image: url({{url('images/CIP/bg-1.jpg')}});
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -50,7 +50,7 @@
             }).then(response => {
                 if(response.data.result == 1){
                     window.alert('Upload bukti pembayaran berhasil');
-                    window.location.href = '/cc';
+                    window.location.href = '/list_pendaftaran';
                 }else {
                     console.log('gagal');
                 }

@@ -89,7 +89,7 @@
 
 <style>
     body {
-        background-image: url('images/semnas/bg-1.jpg');
+        background-image: url({{url('images/semnas/bg-1.jpg')}});
         background-repeat: no-repeat;
         background-size: cover;
     }

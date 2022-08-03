@@ -179,7 +179,7 @@
 </div>
 <style>
     body {
-        background-image: url('../images/chempaign/bg-1.jpg');
+        background-image: url({{url('images/chempaign/bg-1.jpg')}});
         background-repeat: no-repeat;
         background-size: cover;
     }

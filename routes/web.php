@@ -39,6 +39,16 @@ Route::middleware(['auth', 'isAdmin'])->group(function() {
     Route::get('/admin/cip_detail/{id}', [App\Http\Controllers\AdminController::class, 'detailCIP']);
     Route::get('/admin/cod_detail/{id}', [App\Http\Controllers\AdminController::class, 'detailCOD']);
     Route::get('/admin/chempaign_detail/{id}', [App\Http\Controllers\AdminController::class, 'detailChempaign']);
+
+    Route::get('/admin/news', [App\Http\Controllers\AdminController::class, 'news']);
+    Route::get('/admin/news/add', [App\Http\Controllers\AdminController::class, 'createNews']);
+    Route::post('/admin/news/upload', [App\Http\Controllers\AdminController::class, 'newsUpload'])->name('news.upload');
+    Route::get('/admin/news/{id}', [App\Http\Controllers\AdminController::class, 'detailNews']);
+    Route::post('/admin/news/{id}', [App\Http\Controllers\AdminController::class, 'newsUpdate']);
+    Route::get('/admin/delete/{id}', [App\Http\Controllers\AdminController::class, 'newsDelete']);
+
+    Route::get('/admin/acc/{id}', [App\Http\Controllers\Controller::class, 'accept']);
+    Route::post('/admin/reject/{id}', [App\Http\Controllers\Controller::class, 'reject']);
 });
 
 Route::get('/cc', [App\Http\Controllers\CCController::class, 'index']);
@@ -47,6 +57,7 @@ Route::get('/cip', [App\Http\Controllers\CIPController::class, 'index']);
 Route::get('/semnas', [App\Http\Controllers\SemNasController::class, 'index']);
 Route::get('/chempaign', [App\Http\Controllers\ChempaignController::class, 'index']);
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index']);
+Route::get('/news/{id}', [App\Http\Controllers\NewsController::class, 'desc']);
 
 Route::middleware(['auth'])->group(function() {
     // Page pendaftaran

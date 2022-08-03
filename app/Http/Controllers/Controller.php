@@ -154,4 +154,23 @@ class Controller extends BaseController
 
         return redirect()->back()->with('alert','Berhasil Update');
     }
+
+    public function accept($id)
+    {
+        $competition = Competition::find($id);
+        $competition->lolos = 1;
+        $competition->save();
+
+        return redirect(session('links')[0])->with('alert','Berhasil Update');
+    }
+
+    public function reject($id, Request $req)
+    {
+        $competition = Competition::find($id);
+        $competition->alasan = $req->reason;
+        $competition->lolos = 2;
+        $competition->save();
+
+        return redirect(session('links')[0])->with('alert','Berhasil Update');
+    }
 }

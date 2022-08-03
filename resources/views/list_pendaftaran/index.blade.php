@@ -37,6 +37,13 @@
                 @elseif ($comp->status == 5)
                     <p>Menunggu verifikasi abstrak</p>
                 @endif
+                @if( $comp->lolos == 1)
+                    <a> <b> Hasil Seleksi : </b> Lolos </a>
+                @elseif ($comp->lolos == 2)
+                    <a> <b> Hasil Seleksi : </b> Tidak Lolos dikarenakan {{$comp->alasan}} </a>
+                @else
+                    <a> <b> Hasil Seleksi : </b>  Belum Diverifikasi </a>
+                @endif
             </div>
         </div>
     </div>
@@ -45,7 +52,7 @@
 
 <style>
     body {
-        background-image: url('images/News/background.png');
+        background-image: url({{url('images/News/background.png')}});
         background-repeat: no-repeat;
         background-size: cover;
     }
