@@ -202,7 +202,7 @@
         }).then(response => {
             if(response.data.result == 1){
                 window.alert('Pendaftaran berhasil dilakukan');
-                window.location.href = '/payment/cip/'+response.data.id;
+                window.location.href = '/abstrak/cip/'+response.data.id;
             }else {
                 console.log(response);
                 window.alert('Pendaftaran gagal 1');

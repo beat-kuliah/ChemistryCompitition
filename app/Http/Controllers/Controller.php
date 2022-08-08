@@ -100,7 +100,7 @@ class Controller extends BaseController
         $fileNameAbstrak = $time . '.' . $abstrak->getClientOriginalExtension();
 
         $bukti = [
-            'status' => 4,
+            'status' => 5,
             'abstrak' => $fileNameAbstrak,
             'updated_at' => Carbon::now()
         ];
@@ -140,8 +140,14 @@ class Controller extends BaseController
     public function konfirmasi($id)
     {
         $competition = Competition::find($id);
-        $competition->status = 3;
-        $competition->save();
+        if($competition->status == 4){
+            $competition->status = 1;
+            $competition->lolos = 1;
+            $competition->save();
+        }else{
+            $competition->status = 3;
+            $competition->save();
+        }
 
         return redirect()->back()->with('alert','Berhasil Update');
     }

@@ -178,7 +178,7 @@ class CIPController extends Controller
         $success = Competition::find($id);
 
         if($success->status == 5){
-            return redirect('/payment/cip/'.$id);
+            return redirect('/abstrak/cip/'.$id);
         }else {
             $data = [
                 'id' => $id,
@@ -199,5 +199,10 @@ class CIPController extends Controller
         ];
 
         return view('cip.payment', $data);
+    }
+
+    public function makalah()
+    {
+        return view('cip.makalah');
     }
 }

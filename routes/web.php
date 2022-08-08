@@ -89,6 +89,10 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/payment/{id}', [App\Http\Controllers\Controller::class, 'store_payment']);
     // Post upload abstrak
     Route::post('/abstrak/{id}', [App\Http\Controllers\Controller::class, 'store_abstrak']);
+    // Finish Semnar
+    Route::get('/semnar/finish', [App\Http\Controllers\SemNasController::class, 'finish']);
+    // upload makalah
+    Route::get('/cip/makalah', [App\Http\Controllers\CIPController::class, 'makalah']);
 });
 
 

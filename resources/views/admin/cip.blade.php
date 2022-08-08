@@ -38,6 +38,8 @@
                             <td> Menunggu Konfirmasi </td>
                         @elseif ($item->status == 3)
                             <td> Sudah Dikonfirmasi </td>
+                        @elseif ($item->status == 4)
+                            <td> Konfirmasi abstrak </td>
                         @else
                             <td> Dibatalkan </td>
                         @endif

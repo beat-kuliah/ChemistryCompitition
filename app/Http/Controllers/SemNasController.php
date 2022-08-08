@@ -64,14 +64,19 @@ class SemNasController extends Controller
         }
 
         $mention = $req->file('bukti');
-        $fileName = $this->controller->setFileName($mention);
+        $fileName1 = $this->controller->setFileName($mention);
+        $twibon = $req->file('twibon');
+        $fileName2 = $this->controller->setFileName($twibon);
+        $scan = $req->file('scan');
+        $fileName3 = $this->controller->setFileName($scan);
 
         $competition = [
             'id' => $id,
             'chemistry_id' => 8,
-            'status' => 2,
+            'status' => 4,
             'school' => $req->instansi,
-            'abstrak' => $fileName,
+            'poster' => $fileName1,
+            'twibon' => $fileName2,
             'created_by' => Auth::user()->id,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
@@ -85,6 +90,7 @@ class SemNasController extends Controller
             'no_telp' => $req->no_telp,
             'no_identitas' => $req->nim,
             'mahasiswa' => $req->status_sekolah,
+            'scan_kartu_pelajar' => $fileName3,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ];
@@ -94,7 +100,9 @@ class SemNasController extends Controller
             DB::table('competition')->insert($competition);
             DB::table('person')->insert($person);
 
-            $mention->move($path, $fileName);
+            $mention->move($path, $fileName1);
+            $twibon->move($path, $fileName2);
+            $scan->move($path, $fileName3);
 
             DB::commit();
 
@@ -110,6 +118,11 @@ class SemNasController extends Controller
 
         // return $req;
         return $result;
+    }
+
+    public function finish()
+    {
+        return view('semnas.finish');
     }
 
 }

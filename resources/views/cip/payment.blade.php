@@ -10,7 +10,7 @@
     @elseif ($status == 2)
         <h3>Pembayaran sedang diverifikasi oleh Panitia</h3>
     @else
-        <h3>Silahkan melakukan pembayaran sebesar Rp 115.000 ke No.Rek 123456</h3>
+        <h3>Silahkan melakukan pembayaran sebesar Rp 115.000 ke No.Rek {{ env("NO_REKENING") }} Bank {{ env("BANK") }} a.n {{ env("BANK_A_N") }}.<br>Gopay, Dana, OVO, SPay = {{ env("ELEKTRONIK") }} ({{ env("BANK_E") }}).<br>Contact Person : <br>{{ env("CP_NAME1") }}: {{ env("CP_NOMOR1") }}/{{ env("CP_LINE1") }}<br>{{ env("CP_NAME2") }}: {{ env("CP_NOMOR2") }}/{{ env("CP_LINE2") }}</h3>
         <form>
             <div class="form-group">
                 <label for="bukti">Upload Bukti Pembayaran</label>

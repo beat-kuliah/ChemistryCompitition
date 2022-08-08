@@ -208,7 +208,7 @@
             window.alert('Jumlah Peserta sudah maksimal');
         }else{
             count++;
-
+            
             var html = '';
             html += '<div class="mb-3" id="inputFormRow">';
             html += '<label for="namaPeserta" class="form-label">Nama peserta ' + count + '</label>';
@@ -226,6 +226,9 @@
         }
     });
 
+    function removeRow(){
+        count--;
+    }
     // remove row
     $(document).on('click', '#removeRow', function () {
         $(this).closest('#inputFormRow').remove();

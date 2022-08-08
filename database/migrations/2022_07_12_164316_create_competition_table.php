@@ -23,6 +23,8 @@ return new class extends Migration
             $table->integer('status')->default(1);
             $table->text('payment')->nullable();
             $table->text('abstrak')->nullable();
+            $table->text('poster')->nullable();
+            $table->text('twibon')->nullable();
             $table->text('alasan')->nullable();
             $table->text('lolos')->nullable();
             $table->integer('created_by');
